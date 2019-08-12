@@ -1,0 +1,59 @@
+Переменные в GO
+1. Переменные в GO являются стаически типизированными, то есть их тип обявляется в начале функции и остается неизменным на протяжении ее выполнения
+3. Переменные могут объявляться глобально и локально
+глобально:		
+	-перед обявлением функции Main
+	-с помощью функционального слова var ()
+	-количество неограничено, необязательное использование всех обявленных
+	-пример:
+package main
+import ("fmt")
+var (		name, surname string
+		age int)
+
+func main() {
+	fmt.Println ("name is", name)
+	fmt.Println ("age is", age)}
+
+локально:		
+	-в самой функции
+	-с помощью функционального слова var () или с помощью знака присвоеня :=
+	-все обявленные должны быть испотзованы в этой функции
+	-пример:
+package main
+import (	"fmt"
+		"reflect")	
+func main() {
+	name := "Vika"
+	surname := "Zarichnaya"
+	age := 28 // персональные данные
+
+	fmt.Println ("name is", name, "and is of type", reflect.TypeOf(name))
+	fmt.Println ("surname is", surname, "and is of type", reflect.TypeOf(surname))
+	fmt.Println ("age is", age, "and is of type", reflect.TypeOf(age))}
+
+3. Возможно также, не объявляя тип переменной,а присвоив ей конкретное начение, с помощью функции TypeOf из библиотеки reflect, определить ее тип, пример:
+package main
+import (	"fmt"
+		"reflect")
+
+var (	name, surname, age = "Vika", "Zarichnaya", 28 // персональные данные
+)
+func main() {
+	fmt.Println ("name is", name, "and is of type", reflect.TypeOf(name))
+	fmt.Println ("age is", age, "and is of type", reflect.TypeOf(age))}
+
+4. В случае произведения математических опреаций с перемнными разных типов, которые были обявлены глобально,мы можем поменять уже заданный тип пременной локально, в рамках конкретной функции. Однако за пределами данной функции переменная останется с первоначальным типом, пример:
+package main
+
+import ("fmt"
+	"reflect")
+
+func main() {
+	a:= 10.5
+	b:= 10
+
+	fmt.Println ("A is type", reflect.TypeOf(a),"and B is type", reflect.TypeOf(b))
+
+	var c = int (a) + b 
+	fmt.Println ("C has value",c, "and is of type:", reflect.TypeOf(c))}
