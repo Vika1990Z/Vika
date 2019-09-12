@@ -29,7 +29,7 @@ start testing
 ls
 file1.txt file2.txt
 ```
-2.2 Return to the previous state of Instance
+2.2 Restore from snapshot
 
 ```
 ls
