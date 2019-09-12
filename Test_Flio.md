@@ -47,7 +47,20 @@ tail -f /var/log/cloud-init.log
 kubectl get nodes 
 kubectl get pods --all-namespaces
 ```
+3) **Create pod and service**
 
-3) **Delete Cluster**
+```
+kubectl run nginx --image=nginx --restart=Never
+kubectl expose pod nginx --target-port=80 --port=80
+```
+
+4) **Delete pod and service**
+
+```
+kubectl delete pod nginx
+kubectl delete service nginx
+```
+
+5) **Delete Cluster**
 to delete a Cluster click the icon More and select Delete
 
