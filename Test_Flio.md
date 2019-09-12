@@ -37,15 +37,18 @@ file1.txt
 ```
 
 3. **Resize the current instance:**
-check that our Instance is still working clearly -  create a file (eg. file3.txt) and write some words into it (eg. resize testing)    
+check that our Instance is still working clearly -  create a file (eg. file3.txt) and write some words into it (eg. resize testing)   
 
+# Testing clearly work whith Clusters
+
+1. **Create a new Cluster**
+2. **Check that Cluster works clearly**
 ```
-echo "continue testing" > file2.txt
-cat file3.txt
-resize testing
-ls
-file1.txt file3.txt
+tail -f /var/log/cloud-init.log
+kubectl get nodes 
+kubectl get pods --all-namespaces
 ```
-4. **Delete instance**
-to delete an instance click the icon More and select Delete
+
+4. **Delete Cluster**
+to delete a Cluster click the icon More and select Delete
 
