@@ -2,12 +2,12 @@
 
 1) **Create a new Instances**
 
-1.1 *Access the VM using the folloving command:*
+    * 1.1 Access the VM using the folloving command:
 
 ```
 ssh ip_address
-```   
-1.2 *Create a file (eg. file1.txt) and write some words into it (eg. start testing)*
+```      
+   * 1.2 Create a file (eg. file1.txt) and write some words into it (eg. start testing)
 
 ```
 echo "start testing" > file1.txt
@@ -19,17 +19,17 @@ file1.txt
 
 2) **Create snapshot of your current instance:**
 
-2.1 *Create a file (eg. file2.txt) and write some words into it (eg. continue testing)*    
+   * 2.1 Create a file (eg. file2.txt) and write some words into it (eg. continue testing)    
 
 ```
 echo "continue testing" > file2.txt
 cat file2.txt
 start testing
 ls
-file1.txt file2.txt
-```
-
-2.2 *Restore from snapshot*
+file1.txt file2.txt   
+```   
+    
+   * 2.2 Restore from snapshot
 
 ```
 ls
